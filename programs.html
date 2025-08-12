@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programs | Grace Haven</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+
+    <style>
+        /* Initial hidden state for reveal elements */
+        /* Hide elements initially */
+        .reveal {
+            opacity: 0;
+        }
+
+        /* Active state triggers the animation */
+        .reveal.active {
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+
+        /* Staggered delays */
+        .reveal.delay.active {
+            animation-delay: 0.2s;
+        }
+
+        .reveal.delay2.active {
+            animation-delay: 0.4s;
+        }
+
+        /* Keyframe for fade and slide up */
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            60% {
+                opacity: 1;
+                transform: translateY(-5px);
+                /* slight bounce effect */
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Background image for this page */
+        body {
+            background: url('assets/2nd\ shii.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
+            position: relative;
+            color: white;
+        }
+
+        /* Dark overlay to improve text contrast */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: -1;
+        }
+
+        .programs-header {
+            text-align: center;
+            padding: 5rem 1rem 2rem;
+            color: white;
+        }
+
+        .programs-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .programs-header p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .programs-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 3rem 5%;
+        }
+
+        .program-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            /*Frosted glass blur*/
+            -webkit-backdrop-filter: blur(8px);
+            /*Safari support*/
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: white;
+            text-align: left;
+        }
+
+        .program-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .program-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: white
+        }
+
+        .program-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .program-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.6rem 1.2rem;
+            background: white;
+            color: #111;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .program-card a:hover {
+            background: white;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="fade-in">
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/GraceHaven.svg.svg" alt="Grace Haven Logo" class="logo-img">
+                <span>Grace Haven</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a class="active" href="programs.html">PROGRAMS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Header Section -->
+    <section class="programs-header reveal">
+        <h1>Our Programs</h1>
+        <p>We are committed to initiatives that bring transformation, hope, and empowerment to individuals and
+            communities.</p>
+    </section>
+
+    <!-- Programs Grid -->
+    <section class="programs-section">
+        <div class="program-card reveal">
+            <h3>Community Outreach</h3>
+            <p>We engage in various outreach activities, providing resources, education, and support to underserved
+                areas.</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="program-card reveal delay">
+            <h3>Youth Empowerment</h3>
+            <p>Our youth programs equip the next generation with skills, mentorship, and opportunities for growth.</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="program-card reveal delay2">
+            <h3>Food & Shelter Aid</h3>
+            <p>Providing food assistance and temporary shelter to individuals and families in crisis situations.</p>
+            <a href="#">Learn More</a>
+        </div>
+        <div class="program-card reveal">
+            <h3>Education Support</h3>
+            <p>Scholarships, learning materials, and workshops to help children and adults achieve their academic
+                dreams.</p>
+            <a href="#">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 2rem; font-size: 0.9rem; opacity: 0.7;">
+        &copy; 2025 Grace Haven. All rights reserved.
+    </footer>
+
+    <script>
+        // Simple scroll reveal script
+        const reveals = document.querySelectorAll(".reveal");
+        window.addEventListener("scroll", () => {
+            for (let i = 0; i < reveals.length; i++) {
+                const windowHeight = window.innerHeight;
+                const revealTop = reveals[i].getBoundingClientRect().top;
+                const revealPoint = 100;
+                if (revealTop < windowHeight - revealPoint) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate Now | GraceHaven</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: white;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .donate-box {
+            background: black;
+            padding: 30px;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .logo-container img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 8px;
+        }
+
+        .logo-container span {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #00ffd5;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .bank-details {
+            background: darkslategrey;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .bank-details h3 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            color: #00ffd5;
+        }
+
+        .bank-details p {
+            margin: 4px 0;
+            font-size: 0.95rem;
+            color: #f1f1f1;
+        }
+
+        .note {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="donate-box">
+        <div class="logo-container">
+            <img src="assets/GraceHaven.svg.svg" alt="GraceHaven Logo">
+
+        </div>
+
+        <h1>Donate Now</h1>
+        <p>Your contribution helps us provide shelter, education, and hope for children in need.</p>
+
+        <div class="bank-details">
+            <h3>Bank Transfer Details</h3>
+            <p><strong>Account Name:</strong> Andrew Ventres</p>
+            <p><strong>Account Number:</strong> 8264512746</p>
+            <p><strong>Bank Name:</strong> TD Bank</p>
+            <p><strong>Routine Number:</strong> 211370545</p>
+        </div>
+
+        <p class="note">NB: Please include your name in the transfer description so we can acknowledge your donation.
+        </p>
+    </div>
+</body>
+
+</html>

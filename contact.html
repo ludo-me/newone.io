@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Grace Haven</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg" href="assets/GraceHaven.svg.svg" />
+
+    <script defer src="script.js"></script>
+
+    <style>
+        /* Background */
+        body {
+            background: black;
+            background-attachment: fixed;
+            position: relative;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        /* Header */
+        .contact-header {
+            text-align: center;
+            padding: 4rem 1rem 2rem;
+            animation: fadeDown 0.8s ease-out forwards;
+        }
+
+        .contact-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-header p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Container */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            padding: 3rem 5%;
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+
+        /* Info Box */
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            opacity: 0.85;
+        }
+
+        /* Form */
+        form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        form button {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            background: white;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        form button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="fade-in">
+
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="assets/GraceHaven.svg.svg" alt="Grace Haven Logo" class="logo-img">
+                <span>Grace Haven</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="programs.html">PROGRAMS</a></li>
+                <li><a class="active" href="contact.html">CONTACT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contact Header -->
+    <section class="contact-header">
+        <h1>Get in Touch</h1>
+        <p>We’d love to hear from you! Whether you have a question, want to volunteer, or partner with us — reach out
+            below.</p>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-container">
+        <!-- Info Box -->
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><strong>Email:</strong> info@gracehaven.org</p>
+        </div>
+
+        <!-- Form -->
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+
+</body>
+
+</html>
